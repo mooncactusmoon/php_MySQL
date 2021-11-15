@@ -51,7 +51,7 @@ footer{
     width: calc(100% - 120px);
 }
 #regForm input{
-    border: 0px;
+    border: 0px; 
 }
 #regForm input{
     font-size: 16px;
