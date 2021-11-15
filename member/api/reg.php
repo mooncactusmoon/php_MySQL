@@ -2,6 +2,9 @@
 
 $account=$_POST['account'];
 $password=$_POST['password'];
+//$password=md5($_POST['password']); 
+//正常要用這個編碼(無法復原)讓密碼不被看到。但我們還在練習階段就先用明碼就好
+
 $mail=$_POST['mail'];
 $name=$_POST['name'];
 $address=$_POST['address'];
@@ -16,5 +19,7 @@ $pdo=new PDO($dsn,'root','');
 
 $pdo->exec($sql_account);
 $pdo->exec($sql_member);
+
+header("location:../index.php");
 
 ?>
