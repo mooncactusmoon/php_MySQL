@@ -18,6 +18,6 @@ $pdo->exec($sql_member);
 
 echo $sql_account;
 echo $sql_member;
-header("location:../dashboard.php");
+header("location:../content.php?action=dashboard");
 
 ?>

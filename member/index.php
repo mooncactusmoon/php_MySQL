@@ -43,13 +43,13 @@ session_start();
         <?php
         if(isset($_SESSION['user'])){
         ?>
-        <a href="dashboard.php"><button>會員中心</button></a>
+        <a href="content.php?action=dashboard"><button>會員中心</button></a>
         <a href="logout.php"><button>登出</button></a>
         <?php
         }else{
         ?>
-        <a href="reg.php"><button>註冊新會員</button></a>
-        <a href="login.php"><button>登入</button></a>
+        <a href="content.php?action=reg"><button>註冊新會員</button></a>
+        <a href="content.php?action=login"><button>登入</button></a>
         <?php
         }
         ?>
