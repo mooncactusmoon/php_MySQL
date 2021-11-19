@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,13 +21,13 @@
         <h3>會員中心</h3>
     <?php 
     // 因為網址有user=使用者帳號，所以用get可以的到其值
-    echo $_GET['user']; 
+    echo $_SESSION['user']; 
     echo "歡迎你<br>";
     // 顯示個人資料
     
     $dsn="mysql:host=localhost;charset=utf8;dbname=member";
     $pdo=new PDO($dsn,'root','');
-    $sql="SELECT * FROM `account`,`member` WHERE `account`.`id`=`member`.`id` && `account`.`account`='{$_GET['user']}'";
+    $sql="SELECT * FROM `account`,`member` WHERE `account`.`id`=`member`.`id` && `account`.`account`='{$_SESSION['user']}'";
     $user=$pdo->query($sql)->fetch();
     ?>
     個人資料:

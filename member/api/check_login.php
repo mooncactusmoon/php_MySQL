@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 // $account=$_POST['account'];
 // $password=$_POST['password'];
 // $password=md5($_POST['password']); 編碼後的密碼
@@ -16,6 +19,7 @@ $pdo=new PDO($dsn,'root','');
 $result=$pdo->query($sql)->fetchColumn();
 
 if($result>0){
+    $_SESSION['user']=$_POST['account'];
     // header("location:../dashboard.php"); 原本的
     header("location:../dashboard.php?user=".$_POST['account']);
 }else{
