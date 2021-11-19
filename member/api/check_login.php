@@ -1,6 +1,8 @@
 <?php
 // $account=$_POST['account'];
 // $password=$_POST['password'];
+// $password=md5($_POST['password']);
+
 $sql="SELECT count(*) FROM `account` WHERE `account`='{$_POST['account']}' && `password`='{$_POST['password']}'";
 
 // SELECT * FROM `account` WHERE `account`='$_POST['account']' && `password`='$_POST['password']';
