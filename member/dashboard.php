@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+//安全設置，讓沒登入的人無法看到這個頁面，並且回到首頁
+if(!isset($_SESSION['user'])){
+    header("location:index.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
