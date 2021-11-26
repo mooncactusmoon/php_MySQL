@@ -66,6 +66,20 @@ echo "迴圈完成後=>".mb_substr($sql,0,mb_strlen($sql)-5); */
 
  }
 
+ function insert($table,$array){
+    global $pdo;
+    $array=['id'=>'1',
+            'subject'=>'今天要吃甚麼'];
+    $sql="INSERT into $table(`id`,`subject`) value('1','今天要吃甚麼')";
+
+    return $pdo->exec($sql);
+}
+ function del($table,$id){
+     global $pdo;
+     $sql="DELETE FROM `$table` WHERE `id`='$id'";
+
+     return $pdo->exec($sql);
+ }
 
 
 ?>
